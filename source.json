@@ -1,9 +1,0 @@
-{
-  "repository": "https://github.com/MetaMask/eth-phishing-detect",
-  "commit": "825947708eed59c0cb52f8bc834c52ead8f92831",
-  "configSha256": "e06d506894244be76a1ccdd3b566cb9de77237efff8f16fd3cd82561f5ae5ee6",
-  "licenseSha256": "ae38934d7e645663d0d762cb624f9c553a3bb341af5e04fb5c26f2f344beef87",
-  "domainsSha256": "6691d02cc9c3a3d4ac7b32014c9a47ded538e30d309b63b5f8834d1d4d76adec",
-  "allowed": 59,
-  "blocked": 119100
-}

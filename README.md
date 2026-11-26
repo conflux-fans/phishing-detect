@@ -1,9 +1,7 @@
-# Fluent phishing domains
+# Fluent phishing configuration
 
-Static, host-only mirror for Fluent Wallet, derived from [MetaMask eth-phishing-detect](https://github.com/MetaMask/eth-phishing-detect). See [LICENSE-MetaMask.txt](./LICENSE-MetaMask.txt) for the upstream license. This is not a list of sites visited by wallet users.
+[config.json](./config.json) contains **Fluent-maintained rules only**. It is not a MetaMask mirror, and no scheduled job imports or republishes MetaMask data. Empty lists mean Fluent has not configured any exceptions or blocks.
 
-- [source.json](./source.json) is the small version stamp. `domainsSha256` is the SHA-256 of the exact UTF-8 bytes of `domains.json`, including its final newline.
-- [domains.json](./domains.json) publishes the normalized whitelist and blacklist as one file. Whitelist entries take precedence. The feed excludes fuzzy matches and path rules; a path on a shared host is not a rule for the whole host.
-- The stamp identifies the upstream commit and the SHA-256 of its original configuration and license. These hashes detect mismatched versions, not a compromise of the trusted repository.
+Propose changes by pull request: include the hostname and reason, review false positives (especially shared hosting platforms), then merge. Use the MetaMask v2 configuration shape (`version: 2`, `whitelist`, `blacklist`, `fuzzylist`, `tolerance`). The Fluent wallet currently uses only hostname rules in the whitelist and blacklist. Do not add a full URL, path, wildcard or private browsing data. Allowlist entries also cover subdomains, so review their scope carefully.
 
-Consumers should fetch the stamp first, download the list only if its hash differs, verify the bytes and keep the last validated copy on any failure. Do not submit browsing URLs to this repository.
+The wallet fetches MetaMask's maintained rules independently from MetaMask's phishing-detection API. For historical attribution only: [the original mirrored data](https://github.com/MetaMask/eth-phishing-detect) credited Copyright (C) 2018 kumavis; [the upstream license notice](./LICENSE-MetaMask.txt) is retained for previous revisions. This repository is not an official MetaMask service.
